@@ -2,11 +2,11 @@ import random
 
 class Riddle:
     def __init__(self):
-        the_riddle_number = random.randint(1,11)
+        the_riddle_number = random.randint(1,14)
         match the_riddle_number:
             case 1:
                 self.damage = 40
-                self.time_to_solve = 10
+                self.time_to_solve = 15
                 self.riddle = "I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?"
                 self.posible_answers = ["Echo","Whisper","Music","Sound"]
                 self.answer = 1 
@@ -18,13 +18,13 @@ class Riddle:
                 self.answer = 1 
             case 3:
                 self.damage = 50
-                self.time_to_solve = 12
+                self.time_to_solve = 17
                 self.riddle = "I am taken from a mine, and shut up in a wooden case, from which I am never released, and yet I am used by almost every person. What am I?"
                 self.posible_answers = ["Gold","Diamond","Coal","charcoal"]
                 self.answer = 4 
             case 4:
                 self.damage = 50
-                self.time_to_solve = 12
+                self.time_to_solve = 15
                 self.riddle = "I am deeper then every building that you can build, i can be as hight as the clouds. You cant move me but you can damage me"
                 self.posible_answers = ["Tree","The sea","Light","Mounten"]
                 self.answer = 4  
@@ -36,7 +36,7 @@ class Riddle:
                 self.answer = 1  
             case 6:
                 self.damage = 45
-                self.time_to_solve = 9
+                self.time_to_solve = 13
                 self.riddle = "I am not alive, but I can grow. I don't have lungs, but I need air. What am I?"
                 self.posible_answers = ["Fire","Water","Plant","Cloud"]
                 self.answer = 1
@@ -60,7 +60,7 @@ class Riddle:
                 self.answer = 1
             case 10:
                 self.damage = 40
-                self.time_to_solve = 10
+                self.time_to_solve = 18
                 self.riddle = "I will die with you, i was born with you. You can hurt me only if you hurt your self but you can never touch me. Who am i?"
                 self.posible_answers = ["my shadow","my self","my reflection","my name"]
                 self.answer = 3 
@@ -70,6 +70,24 @@ class Riddle:
                 self.riddle = "You can kill me by calling me by name, who am i?"
                 self.posible_answers = ["air","silence","echo","death"]
                 self.answer = 2 
+            case 12:
+                self.damage = 300
+                self.time_to_solve = 10
+                self.riddle = "Will you kill 1 man to save 5?"
+                self.posible_answers = ["Yes","No"]
+                self.answer = 2 
+            case 13:
+                self.damage = 50
+                self.time_to_solve = 15
+                self.riddle = "My father son is my helf brother, my mother daughter is my sister. What am i to my father"
+                self.posible_answers = ["Half son","Son","Adupted son"]
+                self.answer = 1 
+            case 14:
+                self.damage = 40
+                self.time_to_solve = 10
+                self.riddle = "No one has ever survive me"
+                self.posible_answers = ["War","Gun Shoot","Life","death"]
+                self.answer = 3 
             case _:
                 self.damage = 0
                 self.time_to_solve = 15

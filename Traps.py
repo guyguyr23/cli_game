@@ -2,12 +2,33 @@ import random
 
 class Traps:
     def __init__(self):
-        trap_kinds = ["Drop down", "Fall into", "Shooting", "Close from teh sides"]
+        trap_kinds = ["Drop down", "Fall into", "Shooting", "Close from the sides"]
         trap_kind = random.choice(trap_kinds)
         match trap_kind:
             case "Drop down":
                 self.damage = random.randint(100,200) 
                 self.trap_name = random.choice(["Siling", "Tree", "Spikes"])
+                self.length = random.randint(70,150) 
+                self.width = random.randint(70,150)
+                self.durability =  random.randint(150,300)
+                self.force = random.randint(100,200)
+            case "Fall into":
+                self.damage = random.randint(100,200) 
+                self.trap_name = random.choice(["hole", "pit"])
+                self.length = random.randint(70,150) 
+                self.width = random.randint(70,150)
+                self.durability =  random.randint(150,300)
+                self.force = random.randint(100,200)
+            case "Shooting":
+                self.damage = random.randint(100,200) 
+                self.trap_name = random.choice(["arrows", "Spikes"])
+                self.length = random.randint(70,150) 
+                self.width = random.randint(70,150)
+                self.durability =  random.randint(150,300)
+                self.force = random.randint(100,200)
+            case "Close from the sides":
+                self.damage = random.randint(100,200) 
+                self.trap_name = random.choice(["spike walls", "walls"])
                 self.length = random.randint(70,150) 
                 self.width = random.randint(70,150)
                 self.durability =  random.randint(150,300)

@@ -1,5 +1,5 @@
 import random
-from Position import Position
+from map.Position import Position
 
 
 def path_leangth(current_pisition, path_row, map, map_size,max_path_length):

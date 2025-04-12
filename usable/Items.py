@@ -1,11 +1,11 @@
 import random
 from Attack import Attack
-class Item:
+from usable.Useable import *
+
+class Item(Useable):
     def __init__(self):
-        items = ["Sword", "Rope", "Shield", "Knife", "Broken door", "Axe", "Stick", "Bow", "Potion", "Helmet", "Armor", "Staff", "Dagger", "Hammer",
-                 "Torch", "Grapple Hook", "Smoke Bomb"]
-        item_name = random.choice(items)
-        match item_name:
+        super().__init__("Item")
+        match self.name:
             case "Stick":
                 self.durability = random.randint(30, 100)
                 self.length = random.randint(30, 140)
@@ -114,7 +114,7 @@ class Item:
                 self.damage = 0
                 self.width = 0
                 self.attackes = []
-        self.item_name = item_name
+        self.item_name = self.name
 
     def display_info(self):
         print(f"item_name: {self.item_name}")
@@ -123,25 +123,27 @@ class Item:
         print(f"width: {self.width}")
         print(f"damage: {self.damage}")
     
-    def get_attacks(self):
+    def get_attacks(self) -> list[Attack]:
         return self.attackes
 
-    def get_item_name(self):
-        return self.item_name
+    def get_an_attack(self, attack_index) -> Attack:
+        return self.attackes[attack_index]
     
-    def get_length(self):
+    def get_length(self) -> int:
         return self.length
     
-    def get_durability(self):
-        return self.durability
+    def get_durability(self) -> int:
+        return int(self.durability)
 
-    def get_width(self):
+    def get_width(self) -> float:
         return self.width
 
-    def get_damage(self):
+    def get_damage(self) -> int:
         return self.damage
     
-    def take_damage(self, damage_taken):
+    def item_take_damage(self, attack_index: int):
+        damage = self.attackes[attack_index].get_attack_damage()
+        percentage = random.uniform(0.05, 0.15)
+        damage_taken = damage * percentage
         self.durability -= damage_taken
-        return self.durability
         
